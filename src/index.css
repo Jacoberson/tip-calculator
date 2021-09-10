@@ -5,7 +5,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23.7px;
+  color: hsl(186, 14%, 43%);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 @media (min-width: 375px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(185, 41%, 84%);
+    width: 100%;
+    height: 100vh;
+  }
+
   .logo {
     position: relative;
     top: 50px;
@@ -13,22 +42,104 @@ body {
   }
 
   .content-container {
+    position: relative;
+
     top: 40px;
+    background-color: hsl(0, 0%, 100%);
+
     width: 100%;
     height: 83vh;
+
     border-radius: 30px 30px 0px 0px;
   }
 
   .bill-portion {
     position: relative;
     top: 32px;
+    display: flex;
+    flex-flow: column wrap;
     align-content: center;
     align-items: flex-start;
   }
 
-  input#bill-input {
+  .bill {
+    margin-bottom: 6px;
+  }
+
+  #bill-input {
     padding-left: 20px;
     border: 0;
+    background: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+    background-image: url(./images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: right;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  #bill-input:focus {
+    border: 2px solid hsl(172, 67%, 45%);
+    border-radius: 5px;
+  }
+
+  #bill-input:hover {
+    cursor: pointer;
+  }
+
+  .tip {
+    margin-top: 32px;
+  }
+
+  .tip-button-container {
+    position: relative;
+    right: 25px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 311px;
+    height: 176px;
+  }
+
+  .tip-button {
+    width: 117px;
+    height: 48px;
+    background: hsl(183, 100%, 15%);
+    color: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35.54px;
+  }
+
+  .tip-button:hover {
+    background-color: hsl(173, 61%, 77%);
+    cursor: pointer;
+  }
+
+  .tip-button:focus {
+    background: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+  }
+
+  #custom-input {
+    outline: none;
+    border: 0;
+    width: 117px;
+    height: 48px;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: right;
+    background: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+  }
+
+  #custom-input:hover {
+    cursor: pointer;
   }
 }
 
@@ -36,6 +147,7 @@ body {
   .content-container {
     width: 920px;
     height: 481px;
+    border-radius: 30px;
   }
 
   .bill-portion {
@@ -44,44 +156,9 @@ body {
     left: 48px;
     align-content: flex-start;
   }
-}
 
-.App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: hsl(185, 41%, 84%);
-  width: 100%;
-  height: 100vh;
-}
-
-.content-container {
-  position: relative;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 30px;
-}
-
-.bill-portion {
-  display: flex;
-  flex-flow: column wrap;
-}
-
-.bill {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 23.7px;
-  color: hsl(186, 14%, 43%);
-  border-radius: 5px;
-}
-
-input#bill-input {
-  background: hsl(189, 41%, 97%);
-  color: hsl(183, 100%, 15%);
-  background-image: url(./images/icon-dollar.svg);
-  background-repeat: no-repeat;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: right;
-  box-sizing: border-box;
+  .tip-button-container {
+    width: 379px;
+    right: 10px;
+  }
 }
