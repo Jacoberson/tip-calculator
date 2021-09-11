@@ -3,9 +3,9 @@ import logo from "../images/logo.svg";
 
 const Header = () => {
   return (
-    <div className="logo">
+    <header className="logo">
       <img src={logo} alt="logo" />
-    </div>
+    </header>
   );
 };
 
