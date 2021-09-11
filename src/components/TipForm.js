@@ -17,48 +17,50 @@ const TipForm = () => {
   }, [bill, percentage, people]);
 
   const resetAmounts = () => {
-    setBill(0);
-    setPeople(0);
-    setPercentage(0);
+    setBill("");
+    setPeople("");
+    setPercentage("");
   };
 
   return (
-    <form className="bill-portion">
-      <h3 className="bill">Bill</h3>
-      <input
-        id="bill-input"
-        type="number"
-        placeholder="0"
-        onChange={({ target }) => setBill(Number(target.value))}
-      />
-      <h3 className="tip">Select Tip %</h3>
-      <div className="tip-button-container">
-        {tipPercentages.map(percent => (
-          <TipButton
-            key={percent}
-            percent={percent}
-            setPercentage={setPercentage}
-          />
-        ))}
+    <div className="content-container">
+      <form className="bill-portion">
+        <h3 className="bill">Bill</h3>
         <input
-          id="custom-input"
+          id="bill-input"
           type="number"
-          placeholder="Custom"
-          min="1"
-          max="100"
-          onChange={({ target }) => setPercentage(Number(target.value))}
-        />
-      </div>
-      <div className="people-container">
-        <h3 className="number-of-people">Number of People</h3>
-        <input
-          id="people-input"
-          type="number"
-          min="1"
           placeholder="0"
-          onChange={({ target }) => setPeople(Number(target.value))}
+          onChange={({ target }) => setBill(Number(target.value))}
         />
-      </div>
+        <h3 className="tip">Select Tip %</h3>
+        <div className="tip-button-container">
+          {tipPercentages.map(percent => (
+            <TipButton
+              key={percent}
+              percent={percent}
+              setPercentage={setPercentage}
+            />
+          ))}
+          <input
+            id="custom-input"
+            type="number"
+            placeholder="Custom"
+            min="1"
+            max="100"
+            onChange={({ target }) => setPercentage(Number(target.value))}
+          />
+        </div>
+        <div className="people-container">
+          <h3 className="number-of-people">Number of People</h3>
+          <input
+            id="people-input"
+            type="number"
+            min="1"
+            placeholder="0"
+            onChange={({ target }) => setPeople(Number(target.value))}
+          />
+        </div>
+      </form>
       <div className="amounts-container">
         <div className="tip-amount-container">
           <span className="total-per-person">
@@ -78,11 +80,16 @@ const TipForm = () => {
             ${bill && percentage && people ? total : "0.00"}
           </p>
         </div>
-        <button id="reset-btn" type="reset" onClick={() => resetAmounts()}>
+        <button
+          id="reset-btn"
+          type="reset"
+          disabled={!bill || !percentage || !people}
+          className={(!bill || !percentage || !people) && "disabled"}
+          onClick={() => resetAmounts()}>
           Reset
         </button>
       </div>
-    </form>
+    </div>
   );
 };
 

@@ -6,9 +6,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="content-container">
-        <TipForm />
-      </div>
+      <TipForm />
     </div>
   );
 }
