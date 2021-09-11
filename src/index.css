@@ -227,10 +227,12 @@ input {
   }
 
   .amount {
+    position: relative;
+    top: 25px;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 71.09px;
-    letter-spacing: -1px;
+    font-size: 32px;
+    line-height: 47.39px;
+    letter-spacing: -0.67px;
     text-align: right;
     color: hsl(172, 67%, 45%);
   }
