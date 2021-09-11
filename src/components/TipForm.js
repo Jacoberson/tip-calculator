@@ -3,11 +3,11 @@ import TipButton from "./TipButton";
 
 const TipForm = () => {
   const tipPercentages = ["5%", "10%", "15%", "25%", "50%"];
-  const [bill, setBill] = useState(0);
-  const [people, setPeople] = useState(0);
+  const [bill, setBill] = useState("");
+  const [people, setPeople] = useState("");
+  const [percentage, setPercentage] = useState("");
   const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
-  const [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
     const tipResult = (bill * percentage) / 100 / people;
@@ -30,6 +30,7 @@ const TipForm = () => {
           id="bill-input"
           type="number"
           placeholder="0"
+          value={bill}
           onChange={({ target }) => setBill(Number(target.value))}
         />
         <h3 className="tip">Select Tip %</h3>
@@ -57,6 +58,7 @@ const TipForm = () => {
             type="number"
             min="1"
             placeholder="0"
+            value={people}
             onChange={({ target }) => setPeople(Number(target.value))}
           />
         </div>
