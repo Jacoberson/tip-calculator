@@ -21,6 +21,10 @@ const TipForm = () => {
           max="100"
         />
       </div>
+      <div className="people-container">
+        <p className="number-of-people">Number of People</p>
+        <input id="people-input" type="number" min="1" />
+      </div>
     </form>
   );
 };
