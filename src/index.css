@@ -1,3 +1,33 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
+
 body {
   margin: 0;
   font-family: "Space Mono", monospace, "Roboto", sans-serif;
@@ -10,18 +40,6 @@ p {
   font-size: 16px;
   line-height: 23.7px;
   color: hsl(186, 14%, 43%);
-}
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
 }
 
 @media (min-width: 375px) {
@@ -141,6 +159,27 @@ input[type="number"] {
   #custom-input:hover {
     cursor: pointer;
   }
+
+  .people-container {
+    margin-top: 32px;
+  }
+
+  .number-of-people {
+    margin: 0 0 6px;
+  }
+
+  #people-input {
+    background: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+    background-image: url(./images/icon-person.svg);
+    background-repeat: no-repeat;
+    border: 0;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: right;
+    box-sizing: border-box;
+    outline: none;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -160,5 +199,9 @@ input[type="number"] {
   .tip-button-container {
     width: 379px;
     right: 10px;
+  }
+
+  .people-container {
+    margin-top: 0;
   }
 }
