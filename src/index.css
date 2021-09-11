@@ -35,11 +35,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-p {
+h3 {
   font-weight: 700;
   font-size: 16px;
   line-height: 23.7px;
   color: hsl(186, 14%, 43%);
+}
+
+p {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19.25px;
+  color: hsl(184, 14%, 56%);
+}
+
+input {
+  background: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35.54px;
+  text-align: right;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  outline: none;
+  border: 0;
 }
 
 @media (min-width: 375px) {
@@ -87,15 +107,10 @@ p {
   #bill-input {
     padding-left: 20px;
     border: 0;
-    background: hsl(189, 41%, 97%);
-    color: hsl(183, 100%, 15%);
     background-image: url(./images/icon-dollar.svg);
-    background-repeat: no-repeat;
-    font-weight: 700;
-    font-size: 24px;
-    text-align: right;
-    box-sizing: border-box;
     outline: none;
+    width: 311px;
+    height: 48px;
   }
 
   #bill-input:focus {
@@ -105,6 +120,11 @@ p {
 
   #bill-input:hover {
     cursor: pointer;
+  }
+
+  #bill-input::placeholder,
+  #people-input::placeholder {
+    text-align: right;
   }
 
   .tip {
@@ -136,6 +156,7 @@ p {
 
   .tip-button:hover {
     background-color: hsl(173, 61%, 77%);
+    color: hsl(183, 100%, 15%);
     cursor: pointer;
   }
 
@@ -145,15 +166,8 @@ p {
   }
 
   #custom-input {
-    outline: none;
-    border: 0;
     width: 117px;
     height: 48px;
-    font-weight: 700;
-    font-size: 24px;
-    text-align: right;
-    background: hsl(189, 41%, 97%);
-    color: hsl(183, 100%, 15%);
   }
 
   #custom-input:hover {
@@ -169,16 +183,71 @@ p {
   }
 
   #people-input {
-    background: hsl(189, 41%, 97%);
-    color: hsl(183, 100%, 15%);
     background-image: url(./images/icon-person.svg);
-    background-repeat: no-repeat;
-    border: 0;
+  }
+
+  .amounts-container {
+    position: relative;
+    top: 32px;
+    background-color: #00474b;
+    width: 327px;
+    height: 257px;
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .tip-amount-container {
+    position: relative;
+    bottom: 60px;
+    width: 281px;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .total-per-person {
+    position: relative;
+    top: 39px;
+    left: 24px;
+  }
+
+  .total-h3 {
+    color: hsl(0, 0%, 100%);
+    margin: 20px 0 0;
+    padding: 0px;
+  }
+
+  .per-person {
+    margin-top: 0;
+    margin-bottom: 23px;
+  }
+
+  .amount {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 48px;
+    line-height: 71.09px;
+    letter-spacing: -1px;
     text-align: right;
-    box-sizing: border-box;
-    outline: none;
+    color: hsl(172, 67%, 45%);
+  }
+
+  #reset-btn {
+    position: relative;
+    left: 23px;
+    background: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    border-radius: 5px;
+    width: 281px;
+    height: 48px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29.62px;
+    text-align: center;
+    text-transform: uppercase;
   }
 }
 
