@@ -23,7 +23,7 @@ const TipForm = () => {
   };
 
   return (
-    <div className="content-container">
+    <main className="content-container">
       <form className="bill-portion">
         <h3 className="bill">Bill</h3>
         <input
@@ -65,19 +65,19 @@ const TipForm = () => {
       </form>
       <div className="amounts-container">
         <div className="tip-amount-container">
-          <span className="total-per-person">
+          <div className="total-per-person">
             <h3 className="total-h3">Tip Amount</h3>
             <p className="per-person">/ person</p>
-          </span>
+          </div>
           <p className="amount">
             ${bill && percentage && people ? tipAmount : "0.00"}
           </p>
         </div>
         <div className="tip-amount-container">
-          <span className="total-per-person">
+          <div className="total-per-person">
             <h3 className="total-h3">Total</h3>
             <p className="per-person">/ person</p>
-          </span>
+          </div>
           <p className="amount">
             ${bill && percentage && people ? total : "0.00"}
           </p>
@@ -91,7 +91,7 @@ const TipForm = () => {
           Reset
         </button>
       </div>
-    </div>
+    </main>
   );
 };
 
